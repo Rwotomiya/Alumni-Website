@@ -1,0 +1,78 @@
+{% extends "core/base.html" %}
+{% load static %} 
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+        <div class="jumbotron text-center">
+        <a href="{% url 'homepage' %}">
+            <img src="{% static 'core/alumni_logo.jpg' %}" alt="Alumni Logo" class="logo">
+        </a>
+        <h1 class="display-4">Welcome to the LACOBA Website!</h1>
+        <p class="lead">Reconnect with old friends, stay updated with the latest news, and explore our alumni directory.</p>
+        <hr class="my-4">
+        <p>Join our community today and be part of our alumni network!</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'register' %}" role="button">Register</a>
+    </div>
+
+    <div class="container mt-4">
+        <h2>Latest News</h2>
+        <!-- Example news items -->
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action">
+                <h5 class="mb-1">Alumni Reunion Event</h5>
+                <p class="mb-1">Join us for the annual alumni reunion event on April 15th.</p>
+                <small>Posted on 2024-03-01</small>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+                <h5 class="mb-1">New Scholarship Opportunities</h5>
+                <p class="mb-1">We are excited to announce new scholarship opportunities for our alumni.</p>
+                <small>Posted on 2024-02-25</small>
+            </a>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <h2>Upcoming Events</h2>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <h5 class="mb-1">Annual Alumni Reunion</h5>
+                <p class="mb-1">April 15, 2024</p>
+                <small>Location: High School Gymnasium</small>
+            </li>
+            <li class="list-group-item">
+                <h5 class="mb-1">Career Development Workshop</h5>
+                <p class="mb-1">May 10, 2024</p>
+                <small>Location: Online</small>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container mt-4">
+        <h2>What Our Alumni Say</h2>
+        <div class="card-deck">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">John Doe</h5>
+                    <p class="card-text">"Being part of this alumni network has been incredible. The connections I've made and the opportunities I've received have been invaluable."</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Jane Smith</h5>
+                    <p class="card-text">"The alumni events are a great way to stay connected and continue building relationships with fellow graduates."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-4 text-center">
+        <h2>Join Us!</h2>
+        <p>Be part of our vibrant alumni community. Register today to stay updated with all our activities and benefits.</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'register' %}" role="button">Register Now</a>
+    </div>
+
+    <div class="container mt-4">
+        <h2>Alumni Directory</h2>
+        <p>Browse our alumni directory to reconnect with old friends.</p>
+        <a class="btn btn-secondary" href="{% url 'directory' %}">View Directory</a>
+    </div>
+{% endblock %}

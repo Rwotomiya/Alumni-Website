@@ -1,0 +1,27 @@
+{% extends "core/base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Register</h1>
+        <p>Fill out the form below to register as an alumni member.</p>
+        <form method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+            <!-- Example registration form fields -->
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="year">Year of Graduation</label>
+                <input type="number" class="form-control" id="year" name="year" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+{% endblock %}

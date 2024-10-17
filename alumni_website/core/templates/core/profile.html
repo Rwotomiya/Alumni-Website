@@ -1,0 +1,6 @@
+<h1>Your Profile</h1>
+<p><strong>Name:</strong> {{ profile.user.username }}</p>
+<p><strong>Graduation Year:</strong> {{ profile.graduation_year }}</p>
+<p><strong>Profession:</strong> {{ profile.profession }}</p>
+<p><strong>Bio:</strong> {{ profile.bio }}</p>
+<img src="{{ profile.profile_picture.url }}" alt="Profile Picture" style="width: 150px;">

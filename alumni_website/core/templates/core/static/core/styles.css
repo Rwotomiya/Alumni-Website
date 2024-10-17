@@ -1,0 +1,37 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.jumbotron {
+    background-color: #e9ecef;
+    padding: 2rem;
+    border-radius: .3rem;
+}
+.logo {
+    width: 150px; /* Adjust as needed */
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    border: 2px solid#000;
+    margin: 0 auto; /* Center the logo */
+}
+
+header {
+    padding: 20px;
+    background-color: #f8f9fa; /* Light background for the header */
+    border-bottom: 1px solid #e1e1e1; /* Optional border */
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #007bff; /* Bootstrap primary color */
+}
+
+nav a:hover {
+    text-decoration: underline;
+}

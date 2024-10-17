@@ -1,0 +1,29 @@
+{% extends "core/base.html" %}
+
+{% block title %}Directory{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Alumni Directory</h1>
+        <p>Explore the list of alumni members.</p>
+        <!-- Add your directory content here -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Year</th>
+                    <th>Contact</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example row, replace with dynamic content -->
+                <tr>
+                    <td>John Doe</td>
+                    <td>2000</td>
+                    <td>john.doe@example.com</td>
+                </tr>
+                <!-- More rows here -->
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
