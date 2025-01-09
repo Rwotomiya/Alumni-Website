@@ -1,0 +1,10 @@
+<h1>Mentorship Requests</h1>
+<ul>
+    {% for request in requests %}
+    <li>
+        <h2>{{ request.field_of_interest }}</h2>
+        <p>{{ request.details }}</p>
+        <p>Requested by: {{ request.requested_by.username }} on {{ request.requested_on }}</p>
+    </li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,10 @@
+<h1>Job Opportunities</h1>
+<ul>
+    {% for job in jobs %}
+    <li>
+        <h2><a href="{% url 'job_details' job.pk %}">{{ job.title }}</a></h2>
+        <p>Company: {{ job.company_name }} | Location: {{ job.location }} | Type: {{ job.job_type }}</p>
+        <p>Posted on: {{ job.posted_on }}</p>
+    </li>
+    {% endfor %}
+</ul>
