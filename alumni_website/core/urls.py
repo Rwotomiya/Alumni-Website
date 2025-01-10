@@ -12,5 +12,8 @@ urlpatterns = [
     path('jobs/post/', views.post_job, name='post_job'),
     path('mentorship/', views.mentorship_requests, name='mentorship_requests'),    
     path('mentorship/request/', views.request_mentorship, name='request_mentorship'),
+    path('jobs/edit/<int:pk>/', views.edit_job, name='edit_job'),
+    path('jobs/delete/<int:pk>/', views.delete_job, name='delete_job'),
+
     
 ]

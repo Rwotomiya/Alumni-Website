@@ -85,4 +85,34 @@ def request_mentorship(request):
         form = MentorshipRequestForm()
     return render(request, 'mentorship/request_mentorship.html', {'form': form})
 
-    
+# Edit Job Posting
+@login_required
+def edit_job(request, pk):
+    job = get_object_or_404(JobPosting, pk=pk, posted_by=request.user)
+    if request.method == 'POST':
+        form = JobPostingForm(request.POST, instance=job)
+        if form.is_valid():
+            form.save()
+            return redirect('job_postings')
+    else:
+        form = JobPostingForm(instance=job)
+    return render(request, 'jobs/edit_job.html', {'form': form})
+
+# Delete Job Posting
+@login_required
+def delete_job(request, pk):
+    job = get_object_or_404(JobPosting, pk=pk, posted_by=request.user)
+    if request.method == 'POST':
+        job.delete()
+        return redirect('job_postings')
+    return render(request, 'jobs/delete_job.html', {'job': job})
+
+def job_postings(request):
+    jobs = JobPosting.objects.all().order_by('-posted_on')
+    query = request.GET.get('q')
+    job_type = request.GET.get('type')
+    if query:
+        jobs = jobs.filter(title__icontains=query)
+    if job_type:
+        jobs = jobs.filter(job_type=job_type)
+    return render(request, 'jobs/job_postings.html', {'jobs': jobs})

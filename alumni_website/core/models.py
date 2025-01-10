@@ -31,6 +31,7 @@ class JobPosting(models.Model):
     posted_by = models.ForeignKey(User, on_delete=models.CASCADE)
     posted_on = models.DateTimeField(auto_now_add=True)
     application_link = models.URLField(max_length=500)
+    is_approved = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title
